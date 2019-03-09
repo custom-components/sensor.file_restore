@@ -16,7 +16,7 @@ from datetime import datetime
 
 _LOGGER = logging.getLogger(__name__)
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 ATTR_TEMPERATURES = 'temperature_programs'
 
