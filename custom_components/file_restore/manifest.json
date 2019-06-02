@@ -1,0 +1,8 @@
+{
+  "domain": "file_restore",
+  "name": "File Restore",
+  "documentation": "https://github.com/custom-components/sensor.file_restore",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": []
+}
