@@ -16,7 +16,7 @@ from datetime import datetime
 
 _LOGGER = logging.getLogger(__name__)
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 ATTR_TEMPERATURES = 'temperature_programs'
 
@@ -62,7 +62,7 @@ class FileSensor(Entity):
     def name(self):
         """Return the name of the sensor."""
         return self._name
-    
+
     @property
     def unit_of_measurement(self):
         """Return the unit the value is expressed in."""
@@ -97,7 +97,7 @@ class FileSensor(Entity):
             _LOGGER.warning("File or data not present at the moment: %s",
                             os.path.basename(self._file_path))
             return
-        
+
         data_array = data.split(',')
         for index in range(len(data_array)):
             self._temperatures[index] = float(data_array[index])
