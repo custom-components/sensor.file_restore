@@ -18,7 +18,7 @@ Here below the example of setup of sensor and parameters to configure.
 
 ```yaml
 sensor:
-  - platfrom: file_restore
+  - platform: file_restore
     unit_of_measurement: '°C'
     file_path: {path}/file.txt
     name: File
