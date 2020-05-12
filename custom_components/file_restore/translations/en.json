@@ -1,0 +1,27 @@
+{
+    "config": {
+        "title": "File Restore",
+        "step": {
+            "user": {
+                "title": "File Restore - definition of base data",
+                "description": "Define the base data. Documentation on https://github.com/custom-components/sensor.file_restore",
+                "data": {
+                    "name": "Name",
+                    "file_path": "File path (file name included)",
+                    "unit_of_measurement": "Unit of measurement",
+                    "length": "Period length"
+                }
+            },
+            "final": {
+                "title": "File Restore - Definition of period detail",
+                "description": "Define the period detail. Documentation on https://github.com/custom-components/sensor.file_restore",
+                "data": {
+                    "detail": "Period detail"
+                }
+            }
+        },
+        "error": {
+          "file_path_empty": "File path is empty"
+        }
+    }
+}
