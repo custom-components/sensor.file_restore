@@ -7,11 +7,10 @@ The component include also a special attribute that include the all the value re
 In other word this will allow you to define a program of value that will change with time and repeat when reached the last value. In this way you can use that value to do actions accordingly.
 
 ## HOW TO INSTALL
-Just copy paste the content of the `sensor.file_restore/custom_components` folder in your `config/custom_components` directory.
+Use HACS that is the easier and safer way to do it and to manage updates.
+Then setup the entities with user iterface.
 
-As example you will get the '.py' file in the following path: `/config/custom_components/file_restore/sensor.py`.
-
-Note: This can be install through HACS
+Note: old manual method still available.
 
 ## EXAMPLE OF SETUP
 Here below the example of setup of sensor and parameters to configure.
@@ -30,7 +29,7 @@ Field | Value | Necessity | Comments
 --- | --- | --- | ---
 platform | `file_restore` | *Required* |
 unit_of_measurement |  | Optional |
-file_path |  | *Required* | path of the file. Be sure that the URL is whitelisted, if needed.
+file_path |  | *Required* | path of the file. My  suggestion is to use WWW folder. Be sure that the URL is whitelisted, if needed. Directory and file will be created at setup if missing, but remember to add data!
 name | File_restore | Optional |
 length | week | Optional | this define the length of the period. Possibile combinantion of length and detail below.
 detail | hour | Optional | this define the detail of the period. Possibile combinantion of length and detail below.
