@@ -7,6 +7,7 @@ It has the same characteristics but it:
 """
 import os
 import logging
+import asyncio
 
 from homeassistant import config_entries
 from homeassistant.config_entries import SOURCE_IMPORT
