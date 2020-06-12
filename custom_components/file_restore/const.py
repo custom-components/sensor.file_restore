@@ -1,6 +1,6 @@
 """ Useful constant for file_restore integration """
 #Generic
-VERSION = "3.1"
+VERSION = "3.2"
 DOMAIN = "file_restore"
 PLATFORM = "sensor"
 ISSUE_URL = "https://github.com/custom-components/sensor.file_restore/issues"
