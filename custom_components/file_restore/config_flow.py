@@ -89,6 +89,9 @@ class FileRestoreConfigFlow(config_entries.ConfigFlow):
             self._errors["base"]="file_path_empty"
             return False
         else:
+            if user_input[CONF_FILE_PATH][0]=="/":
+                user_input[CONF_FILE_PATH] = user_input[CONF_FILE_PATH][1::]
+            user_input[CONF_FILE_PATH] = user_input[CONF_FILE_PATH].replace("local/", "www/")
             try:
                 with open(user_input[CONF_FILE_PATH], 'r', encoding='utf-8') as file_data:
                     for line in file_data:
