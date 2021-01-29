@@ -7,8 +7,36 @@
                 "description": "Definisci le informazioni di base. Documentazione su https://github.com/custom-components/sensor.file_restore",
                 "data": {
                     "name": "Nome",
-                    "file_path": "Percorso file (includere nome file)",
+                    "file_path": "Percorso file (includere nome file) - usa /",
                     "unit_of_measurement": "Unità di misura",
+                    "length": "Lunghezza del periodo"
+                }
+            },
+            "final": {
+                "title": "File Restore - definizione dettaglio del periodo",
+                "description": "Definisci il dettaglio del periodo. Documentazione su https://github.com/custom-components/sensor.file_restore",
+                "data": {
+                    "detail": "Dettaglio del periodo"
+                }
+            }
+        },
+        "error": {
+          "file_path_empty": "Il percorso del file è vuoto"
+        },
+        "abort": {
+            "single_instance_allowed": "Problema durante la configurazione"
+        }
+    },
+    "options": {
+        "title": "File Resotre",
+        "step": {
+            "init": {
+                "title": "File Restore - definizione dati base",
+                "description": "Definisci le informazioni di base. Documentazione su https://github.com/custom-components/sensor.file_restore",
+                "data": {
+                    "name": "Nome",
+                    "file_path": "Percorso file (includere nome file) - usa /",
+                    "unit_of_measurement": "Unità di misura - null per lasciare vuoto il campo",
                     "length": "Lunghezza del periodo"
                 }
             },
