@@ -12,3 +12,12 @@ def create_file_and_directory(file_path, name) -> bool:
         file_data.write(data)
     _LOGGER.info("File and/or directory was missing. Proceeded with creation.")
     return True
+
+def null_data_cleaner(original_data: dict, data: dict) -> dict:
+    """ this is to remove all null parameters from data that are added during option flow """
+    for key in data.keys():
+        if data[key] == "null":
+            original_data[key] = ""
+        else:
+            original_data[key]=data[key]
+    return original_data
