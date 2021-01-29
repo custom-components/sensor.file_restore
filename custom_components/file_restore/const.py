@@ -1,9 +1,10 @@
 """ Useful constant for file_restore integration """
 #Generic
-VERSION = "3.3"
+VERSION = "4.0"
 DOMAIN = "file_restore"
 PLATFORM = "sensor"
 ISSUE_URL = "https://github.com/custom-components/sensor.file_restore/issues"
+CONFIGFLOW_VERSION = 2
 
 #Defaults
 DEFAULT_NAME = 'file_restore'
