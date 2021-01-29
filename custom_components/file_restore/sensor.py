@@ -5,6 +5,7 @@ import os
 import logging
 import json
 
+from homeassistant.helpers.reload import async_setup_reload_service
 from homeassistant.config_entries import SOURCE_IMPORT
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import (
@@ -46,12 +47,19 @@ async def async_setup_platform(hass, config, async_add_entities,
                                discovery_info=None):
     """Set up the file sensor."""
     _LOGGER.debug("Setup entity coming from configuration.yaml named: %s", config.get(CONF_NAME))
+    await async_setup_reload_service(hass, DOMAIN, PLATFORM)
     async_add_entities([FileSensor(config)], True)
 
 async def async_setup_entry(hass, config_entry, async_add_devices):
     """Add file sensor entities from configuration flow."""
-    _LOGGER.debug("setup entity-config_entry_data=%s",config_entry.data)
-    async_add_devices([FileSensor(config_entry.data)], True)
+    result = {}
+    if config_entry.options != {}:
+        result = config_entry.options
+    else:
+        result = config_entry.data
+    _LOGGER.debug("setup entity-config_entry_data=%s",result)
+    await async_setup_reload_service(hass, DOMAIN, PLATFORM)
+    async_add_devices([FileSensor(result)], True)
 
 class FileSensor(Entity):
     """Implementation of a file sensor."""
