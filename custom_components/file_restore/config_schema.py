@@ -47,30 +47,38 @@ def get_config_flow_schema(config: dict = {}, config_flow_step: int = 0, length_
         }
     if config_flow_step==1:
         return {
-            vol.Optional(CONF_NAME, default=DEFAULT_NAME): str,
-            vol.Required(CONF_FILE_PATH): str,
-            vol.Optional(CONF_UNIT_OF_MEASUREMENT): str,
-            vol.Optional(CONF_LENGTH, default=DEFAULT_LENGTH): vol.In(LENGTH_OPTIONS)
+            vol.Optional(CONF_NAME, default=config.get(CONF_NAME)): str,
+            vol.Required(CONF_FILE_PATH, default=config.get(CONF_FILE_PATH)): str,
+            vol.Optional(CONF_UNIT_OF_MEASUREMENT, default=config.get(CONF_UNIT_OF_MEASUREMENT)): str,
+            vol.Optional(CONF_LENGTH, default=config.get(CONF_LENGTH)): vol.In(LENGTH_OPTIONS)
+        }
+    elif config_flow_step==3:
+        #identical to step 1 but without NAME (better to not change it since it will break configuration)
+        #this is used for options flow only
+        return {
+            vol.Required(CONF_FILE_PATH, default=config.get(CONF_FILE_PATH)): str,
+            vol.Optional(CONF_UNIT_OF_MEASUREMENT, default=config.get(CONF_UNIT_OF_MEASUREMENT)): str,
+            vol.Optional(CONF_LENGTH, default=config.get(CONF_LENGTH)): vol.In(LENGTH_OPTIONS)
         }
     elif config_flow_step==2 and length_value==CON_YEAR:
         return {
-            vol.Required(CONF_DETAIL): vol.In(DETAIL_OPTIONS_YEAR)
+            vol.Required(CONF_DETAIL, default=config.get(CONF_DETAIL)): vol.In(DETAIL_OPTIONS_YEAR)
         }
     elif config_flow_step==2 and length_value==CON_MONTH:
         return {
-            vol.Required(CONF_DETAIL): vol.In(DETAIL_OPTIONS_MONTH)
+            vol.Required(CONF_DETAIL, default=config.get(CONF_DETAIL)): vol.In(DETAIL_OPTIONS_MONTH)
         }
     elif config_flow_step==2 and length_value==CON_WEEK:
         return {
-            vol.Optional(CONF_DETAIL, default=DEFAULT_DETAIL): vol.In(DETAIL_OPTIONS_WEEK)
+            vol.Optional(CONF_DETAIL, default=config.get(CONF_DETAIL)): vol.In(DETAIL_OPTIONS_WEEK)
         }
     elif config_flow_step==2 and length_value==CON_DAY:
         return {
-            vol.Required(CONF_DETAIL): vol.In(DETAIL_OPTIONS_DAY)
+            vol.Required(CONF_DETAIL, default=config.get(CONF_DETAIL)): vol.In(DETAIL_OPTIONS_DAY)
         }
     elif config_flow_step==2 and length_value==CON_HOUR:
         return {
-            vol.Required(CONF_DETAIL): vol.In(DETAIL_OPTIONS_HOUR)
+            vol.Required(CONF_DETAIL, default=config.get(CONF_DETAIL)): vol.In(DETAIL_OPTIONS_HOUR)
         }
 
     return {}
