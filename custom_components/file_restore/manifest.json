@@ -2,9 +2,10 @@
   "domain": "file_restore",
   "name": "File Restore",
   "documentation": "https://github.com/custom-components/sensor.file_restore",
+  "issue_tracker": "https://github.com/custom-components/sensor.file_restore/issues",
   "dependencies": [],
   "codeowners": [],
   "requirements": [],
   "config_flow": true,
-  "version": "4.1"
+  "version": "4.2"
 }

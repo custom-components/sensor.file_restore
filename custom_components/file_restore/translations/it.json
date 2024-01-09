@@ -1,6 +1,5 @@
 {
     "config": {
-        "title": "File Resotre",
         "step": {
             "user": {
                 "title": "File Restore - definizione dati base",
@@ -28,7 +27,6 @@
         }
     },
     "options": {
-        "title": "File Resotre",
         "step": {
             "init": {
                 "title": "File Restore - definizione dati base",

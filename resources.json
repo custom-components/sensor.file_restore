@@ -1,0 +1,5 @@
+[
+  "https://raw.githubusercontent.com/custom-components/sensor.file_restore/master/custom_components/file_restore/__init__.py",
+  "https://raw.githubusercontent.com/custom-components/sensor.file_restore/master/custom_components/file_restore/const.py",
+  "https://raw.githubusercontent.com/custom-components/sensor.file_restore/master/custom_components/file_restore/reproduce_state"
+]
