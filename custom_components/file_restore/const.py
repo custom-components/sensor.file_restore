@@ -1,8 +1,10 @@
+from homeassistant.const import Platform
+
 """ Useful constant for file_restore integration """
 #Generic
-VERSION = "4.2"
+VERSION = "4.3"
 DOMAIN = "file_restore"
-PLATFORM = "sensor"
+PLATFORM = [Platform.SENSOR]
 ISSUE_URL = "https://github.com/custom-components/sensor.file_restore/issues"
 CONFIGFLOW_VERSION = 2
 
