@@ -47,7 +47,7 @@ async def async_setup_platform(hass, config, async_add_entities,
                                discovery_info=None):
     """Set up the file sensor."""
     _LOGGER.debug("Setup entity coming from configuration.yaml named: %s", config.get(CONF_NAME))
-    await async_setup_reload_service(hass, DOMAIN, [PLATFORM])
+    await async_setup_reload_service(hass, DOMAIN, PLATFORM)
     async_add_entities([FileSensor(config)], True)
 
 async def async_setup_entry(hass, config_entry, async_add_devices):
@@ -58,7 +58,7 @@ async def async_setup_entry(hass, config_entry, async_add_devices):
     else:
         result = config_entry.data
     _LOGGER.debug("setup entity-config_entry_data=%s",result)
-    await async_setup_reload_service(hass, DOMAIN, [PLATFORM])
+    await async_setup_reload_service(hass, DOMAIN, PLATFORM)
     async_add_devices([FileSensor(result)], True)
 
 class FileSensor(Entity):
