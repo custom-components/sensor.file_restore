@@ -14,6 +14,7 @@ from homeassistant.const import (
     CONF_UNIT_OF_MEASUREMENT
 )
 from homeassistant.helpers.entity import Entity
+from homeassistant.util import slugify
 from datetime import datetime
 from .const import (
     VERSION,
@@ -67,6 +68,7 @@ class FileSensor(Entity):
     def __init__(self, config):
         """Initialize the file sensor."""
         self._name = config.get(CONF_NAME)
+        self._attr_unique_id = f"programmable_thermostat_{slugify(self._name)}"
         self._file_path = config.get(CONF_FILE_PATH)
         self._state = None
         self._unit = config.get(CONF_UNIT_OF_MEASUREMENT)
